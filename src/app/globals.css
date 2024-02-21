@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.story-bg {
+  background: linear-gradient(to bottom, #00000000, #00000070);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.img-modal-height {
+  /* height: 100vh; */
+  height: calc(100vh - 140px);
+}
+
+.nav-link, .nav-link-m {
+  color: #53545C;
+  background-color: transparent;
+}
+
+.nav-link .temp-bg, .nav-link-m .temp-bg {
+  width: 0%;
+  height: 100%;
+  background-color: #E8E9FF;
+  transition: width 500ms ;
+}
+.nav-link:hover  .temp-bg, .nav-link-m:hover .temp-bg {
+  width: 100%;
+  background-color: #E8E9FF;
+  transition: width 500ms ;
+}
+
+.nav-link-selected, .nav-link-m-selected{
+  color: white;
+  background-color: #7950F2;
+  transition: all 500ms;
+}
+.nav-link-selected:hover, .nav-link-m-selected:hover {
+  color: #53545C;
+  background-color: #E8E9FF;
+  transition: all 500ms;
+}
+.nav-link-m {
+  color: #53545C;
+  background-color: transparent;
+  transition: all 500ms;
+}
+.nav-link-m:hover {
+  background-color: #E8E9FF;
+  transition: all 500ms;
+}
+/* .nav-link-selected .temp-bg {
+  width: 0%;
+  height: 100%;
+  background-color: transparent;
+  transition: width 500ms ;
+}
+.nav-link-selected:hover .temp-bg {
+  width: 100%;
+  background-color: #E8E9FF;
+  transition: width 500ms ;
+} */
+
+/* .nav-link:hover {
+  background-color: #E8E9FF;
+} */
+
+
+@layer utilities {
+  .section-heading {
+    @apply w-full flex justify-between items-center pl-3 pr-5 md:pr-10
+  }
+  .section-heading h3 {
+    @apply text-xl sm:text-2xl font-semibold
+  }
+  .section-heading button {
+    @apply text-[#9058FF] font-semibold text-xs sm:text-base md:text-xl hover:underline
+  }
+  
+  .nav-link, .nav-link-selected, .temp-bg {
+    @apply rounded-full 2xl:rounded-xl
+  }
+  .nav-link-selected .nav-content, .nav-link .nav-content {
+    @apply px-2 py-2 relative 2xl:my-0 2xl:px-5 2xl:py-4
+  }
+  .nav-link .alert {
+    @apply absolute top-0 right-0 z-10 w-5 bg-opacity-90 2xl:bg-opacity-100 2xl:static text-[10px] 2xl:text-xs 2xl:ml-4 2xl:w-6 aspect-square bg-[#7950F2] text-white font-bold rounded-full  leading-none flex items-center justify-center
+  }
+  #navbar img {
+    @apply w-7 h-7 2xl:w-6 2xl:h-6
+  }
+  
+  
+  .nav-link-m, .nav-link-m-selected, .temp-bg {
+    @apply rounded-xl overflow-hidden
+  }
+  .nav-link-m-selected .nav-content, .nav-link-m .nav-content {
+    @apply px-3 py-2.5
+  }
+  .nav-link-m .alert-b {
+    @apply text-xs ml-4 w-6 aspect-square bg-[#E8E9FF] text-[#7950F2] rounded-full  leading-none flex items-center justify-center
+  }
+
+  .view-btn {
+    @apply text-[#7750F1] bg-[#E8E9FF] hover:bg-[#7950F2] hover:text-white  transition-colors rounded-xl   font-semibold text-xs sm:text-lg 
+  }
+  .three-dot {
+    @apply bg-purple-50 border border-[#ded9f0] text-[#9058FF] hover:bg-[#7950F2] hover:border-[#7950F2] hover:text-white transition-colors items-center flex justify-center rounded-xl px-5
+  }
+}
+
