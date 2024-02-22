@@ -14,26 +14,26 @@ export default function Article({ article }: {
 }) {
   return (
     // transition-all duration-200 scale-100 hover:cursor-pointer hover:scale-105
-    <div className="flex  flex-col relative rounded-xl border bg-white p-0 sm:p-3 w-[320px] sm:w-[472px] ">
+    <div className="flex text-black dark:text-white flex-col relative rounded-xl simple-border bg-base-main p-0 sm:p-3 w-[320px] sm:w-[472px]">
       <Image className="rounded-none sm:rounded-xl" src={article.imgSrc} alt="" width={448} height={228} />
       {/* Topic, Date, author */}
       <div className='p-3 sm:p-0'>
         <div className="flex justify-between items-center mt-3">
           <div className="flex space-x-2 text-xs sm:text-sm font-medium items-center">
-            <a href="#" className="text-[#9058FF] font-extrabold hover:underline">{article.topic}</a>
-            <span className="w-1.5 h-1.5 bg-[#D9D9D9] rounded-full" />
+            <a href="#" className="text-[#9058FF] dark:text-[#898EFC] font-extrabold hover:underline">{article.topic}</a>
+            <span className="w-1.5 h-1.5 bg-[#D9D9D9] dark:bg-white rounded-full" />
             <span className="font-semibold">{article.date}</span>
           </div>
           <div className="flex space-x-2 items-center">
-            <div className='w-[20px] sm:w-[30px] aspect-square'>
+            <div className='w-[20px] sm:w-[30px] aspect-square rounded-full overflow-hidden'>
               <Image alt="avatar" className='object-cover' src={'/dp-avatar.jpg'} width={30} height={30} />
             </div>
-            <span className="text-xs leading-none sm:text-base text-black font-semibold">Maria Doe</span>
+            <span className="text-xs leading-none sm:text-base text-black dark:text-white font-semibold">Maria Doe</span>
           </div>
         </div>
         {/* Title */}
         <div className="flex justify-between items-center mt-3">
-          <h1 className='inline-block sm:block text-[#22285E] text-[18px] sm:text-[24px] font-semibold'>
+          <h1 className='inline-block sm:block text-[#22285E] dark:text-slate-200 text-[18px] sm:text-[24px] font-semibold'>
             {article.title}
           </h1>
           {
@@ -61,7 +61,7 @@ export default function Article({ article }: {
         <div className="flex space-x-3 mt-2 text-base leading-none font-semibold ">
           {
             article.tags.map((text, index) => {
-              return <span key={index} className="text-xs py-1.5 px-2.5 sm:text-base sm:py-3 sm:px-4 border text-[#A0A3BD] bg-main-1 hover:bg-gray-100  transition">
+              return <span key={index} className="text-xs py-1.5 px-2.5 sm:text-base sm:py-3 sm:px-4 simple-border text-[#A0A3BD] dark:text-gray-200 bg-base-1 dark:bg-gray-800 simple-border dark:hover:bg-gray-700 hover:bg-gray-100  transition">
                 {text}
               </span>
             })

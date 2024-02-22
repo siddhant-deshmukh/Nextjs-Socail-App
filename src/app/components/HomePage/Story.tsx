@@ -20,8 +20,8 @@ export default function Story({ story, index }: {
   return (
     <div
       //group transition-all duration-200 scale-100 hover:scale-105
-      className=" flex flex-col w-[260px] sm:w-[340px] aspect-[340/500]">
-      <div className="relative rounded-xl">
+      className=" flex flex-col w-[260px] sm:w-[340px] aspect-[340/500] bg-transparent">
+      <div className="relative rounded-xl overflow-hidden">
         <Image src={story.imgSrc} alt="" className="-z-10 object-cover" width={340} height={500} />
         <div className="z-10 w-[260px] sm:w-[340px] aspect-[340/500] absolute top-0 left-0">
           <div className="flex flex-col h-full justify-between p-3">

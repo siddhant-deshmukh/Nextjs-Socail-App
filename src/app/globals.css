@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --top-bar-height: 59px;
+  --left-navbar-width: 50px;
+  --nav-bar-modal-visibility: hidden
+}
+
+@media (min-width: 768px) {
+  body {
+    --top-bar-height:  94px;
+  }
+}
+@media (min-width: 1280) {
+  body {
+    --top-bar-height:  99px;
+  }
+  #nav-bar-modal {
+    visibility: hidden;
+  }
+}
+
+#nav-bar-modal {
+  visibility: var(--nav-bar-modal-visibility);
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
@@ -16,11 +40,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .img-modal-height {
   /* height: 100vh; */
-  height: calc(100vh - 140px);
+  /* 130px */
+  height: calc(100vh - var(--top-bar-height));
+  min-height: 700px;
 }
 
 .nav-link, .nav-link-m {
-  color: #53545C;
   background-color: transparent;
 }
 
@@ -39,21 +64,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .nav-link-selected, .nav-link-m-selected{
   color: white;
   background-color: #7950F2;
-  transition: all 500ms;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
 }
-.nav-link-selected:hover, .nav-link-m-selected:hover {
-  color: #53545C;
-  background-color: #E8E9FF;
-  transition: all 500ms;
-}
+
+
 .nav-link-m {
-  color: #53545C;
   background-color: transparent;
-  transition: all 500ms;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
 }
 .nav-link-m:hover {
   background-color: #E8E9FF;
-  transition: all 500ms;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
 }
 /* .nav-link-selected .temp-bg {
   width: 0%;
@@ -73,14 +97,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 @layer utilities {
+  .scroll-left-btn {
+    @apply absolute z-10 top-1/2 p-2 text-white dark:text-black bg-purple-700 dark:bg-purple-300 bg-opacity-70 dark:bg-opacity-70 aspect-square rounded-full left-2.5 sm:left-10
+  }
+  .scroll-right-btn {
+    @apply absolute z-10 top-1/2 p-2 text-white dark:text-black bg-purple-700 dark:bg-purple-300 bg-opacity-70 dark:bg-opacity-70 aspect-square rounded-full right-2.5 sm:right-10
+  }
+
+  .simple-border {
+    @apply border border-gray-200 dark:border-slate-800
+  }
+  .bg-base-main {
+    @apply bg-white dark:bg-black
+  }
+  .bg-base-1 {
+    @apply bg-[#F8FAFB] dark:bg-slate-900
+  }
+
   .section-heading {
-    @apply w-full flex justify-between items-center pl-3 pr-5 md:pr-10
+    @apply w-full flex justify-between items-center pl-3 pr-5 md:pr-10 text-black dark:text-white
   }
   .section-heading h3 {
     @apply text-xl sm:text-2xl font-semibold
   }
   .section-heading button {
-    @apply text-[#9058FF] font-semibold text-xs sm:text-base md:text-xl hover:underline
+    @apply text-[#9058FF] dark:text-[#898EFC] font-semibold text-xs sm:text-base md:text-xl hover:underline
+  }
+
+  .nav-link:hover, .nav-link-m:hover {
+    @apply dark:text-black;
+  }
+  .nav-link-selected:hover, .nav-link-m-selected:hover {
+    @apply text-white dark:text-black;
+    background-color: #E8E9FF;
+    transition-property: color, background-color;
+    transition-duration: 500ms;
+  }
+
+  .nav-link, .nav-link-m {
+    @apply text-[#53545C] dark:text-slate-100
   }
   
   .nav-link, .nav-link-selected, .temp-bg {
@@ -104,11 +159,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     @apply px-3 py-2.5
   }
   .nav-link-m .alert-b {
-    @apply text-xs ml-4 w-6 aspect-square bg-[#E8E9FF] text-[#7950F2] rounded-full  leading-none flex items-center justify-center
+    @apply text-xs ml-4 w-6 aspect-square bg-[#7950F2] text-[#E8E9FF] font-extrabold rounded-full  leading-none flex items-center justify-center
   }
 
   .view-btn {
-    @apply text-[#7750F1] bg-[#E8E9FF] hover:bg-[#7950F2] hover:text-white  transition-colors rounded-xl   font-semibold text-xs sm:text-lg 
+    /* dark:text-white  dark:bg-[#7950F2] */
+    @apply text-[#7750F1]  bg-[#E8E9FF]  hover:bg-[#7950F2] hover:text-white  transition-colors rounded-xl   font-semibold text-xs sm:text-lg 
   }
   .three-dot {
     @apply bg-purple-50 border border-[#ded9f0] text-[#9058FF] hover:bg-[#7950F2] hover:border-[#7950F2] hover:text-white transition-colors items-center flex justify-center rounded-xl px-5

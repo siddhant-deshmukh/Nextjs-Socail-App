@@ -6,7 +6,7 @@ export default function Page({ params }: {
 }) {
 
   return (
-    <div className=" bg-main-1 w-full min-h-screen ">
+    <div className=" bg-base-1 w-full min-h-screen ">
       <TopBar  />
       <div className="px-2 xs:px-10 mt-10">
         <div className="flex flex-col space-y-2 sm:space-y-0  sm:flex-row justify-between">
@@ -29,15 +29,15 @@ export default function Page({ params }: {
         </div>
         <div className="h-full w-auto md:w-full relative bg-transparent  flex justify-center mt-5">
           <div className="h-full relative flex space-x-0 md:space-x-10 items-center z-10">
-            <button className="absolute inset-y-1/4 xs:inset-y-1/2 bg-opacity-50 md:bg-opacity-100 bg-white z-[25] left-2.5   md:static w-[30px] md:w-[60px] aspect-square p-2 md:p-[14px] rounded-xl md:bg-[#212121]">
+            <button className="absolute inset-y-1/4 xs:inset-y-1/2 bg-opacity-50 md:bg-opacity-100 bg-base-main z-[25] left-2.5   md:static w-[30px] md:w-[60px] aspect-square p-2 md:p-[14px] rounded-xl md:bg-[#212121]">
               <img className="w-[14px] hidden md:block md:w-8 aspect-square" src="/left.svg" />
               <img className="w-[14px] block md:hidden md:w-8 aspect-square" src="/left-black.svg" />
             </button>
             <div className="my-2 relative overflow-hidden rounded-[20px] flex items-center justify-center">
               <div className="absolute top-5 w-[120px] md:w-[200px] h-[5px] flex justify-stretch space-x-[10px] z-20 mx-auto ">
-                <div className="h-[5px w-full rounded-[10px] bg-white"></div>
-                <div className="h-[5px w-full rounded-[10px] opacity-50 bg-white"></div>
-                <div className="h-[5px w-full rounded-[10px] opacity-50 bg-white"></div>
+                <div className="h-[5px w-full rounded-[10px] bg-base-main"></div>
+                <div className="h-[5px w-full rounded-[10px] opacity-50 bg-base-main"></div>
+                <div className="h-[5px w-full rounded-[10px] opacity-50 bg-base-main"></div>
               </div>
               <div className="absolute bottom-5 w-full px-2 md:px-5">
                 <h1 className="text-[25px] md:text-[40px] font-bold text-white">
@@ -49,7 +49,7 @@ export default function Page({ params }: {
               </div>
               <Image className="object-cover" src={'/story/story-img.jpg'} alt="" width={561} height={812} />
             </div>
-            <button className="absolute inset-y-1/4 xs:inset-y-1/2 bg-opacity-50 md:bg-opacity-100 bg-white z-[25] right-2.5  md:static w-[30px] md:w-[60px] aspect-square p-2 md:p-[14px] rounded-xl md:bg-[#212121]">
+            <button className="absolute inset-y-1/4 xs:inset-y-1/2 bg-opacity-50 md:bg-opacity-100 bg-base-main z-[25] right-2.5  md:static w-[30px] md:w-[60px] aspect-square p-2 md:p-[14px] rounded-xl md:bg-[#212121]">
               <img className="w-[14px] hidden md:block md:w-8 aspect-square" src="/right.svg" />
               <img className="w-[14px] block md:hidden md:w-8 aspect-square" src="/right-black.svg" />
             </button>
