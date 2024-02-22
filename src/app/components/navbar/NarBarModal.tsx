@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 import Calender from './Calender'
-import ChangeThemeBtn from './HomePage/ChangeThemeBtn'
+import ChangeThemeBtn from './ChangeThemeBtn'
 
 
 export default function NavBarModal() {

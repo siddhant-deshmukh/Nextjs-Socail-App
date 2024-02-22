@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import ChangeThemeBtn from './HomePage/ChangeThemeBtn'
+import ChangeThemeBtn from './ChangeThemeBtn'
 
 export default function NavBar() {
   return (

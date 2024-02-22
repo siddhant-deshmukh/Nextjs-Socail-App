@@ -1,13 +1,12 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
-import NavBar from "@/app/components/NavBar";
 
 import "./globals.css";
-import TopBar from "./components/TopBar";
-import NavBarModal from "./components/NarBarModal";
-import StoryModal from "./components/HomePage/StoryModal";
 import Provider from "./provider";
+import TopBar from "./components/navbar/TopBar";
+import NavBar from "@/app/components/navbar/NavBar";
+import NavBarModal from "./components/navbar/NarBarModal";
+import StoryModal from "./components/homepage/storySection/StoryModal";
 
 const urbanist = Urbanist({ subsets: ['latin'] })
 

@@ -1,7 +1,7 @@
 "use client"
 
-import { useTheme } from 'next-themes'
 import React from 'react'
+import { useTheme } from 'next-themes'
 
 export default function ChangeThemeBtn() {
   const { theme, systemTheme, setTheme } = useTheme()

@@ -177,7 +177,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .nav-link-m .alert-b {
     @apply text-xs ml-4 w-6 aspect-square bg-[#7950F2] text-[#E8E9FF] font-extrabold rounded-full  leading-none flex items-center justify-center
   }
+  
 
+  
   .view-btn {
     /* dark:text-white  dark:bg-[#7950F2] */
     @apply text-[#7750F1]  bg-[#E8E9FF]  hover:bg-[#7950F2] hover:text-white  transition-colors rounded-xl   font-semibold text-xs sm:text-lg 

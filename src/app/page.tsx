@@ -1,7 +1,7 @@
-import Tabs from "./components/HomePage/Tabs";
-import AdvList from "./components/HomePage/AdvList";
-import StoryList from "./components/HomePage/StoryList";
-import ArticleList from "./components/HomePage/ArticleList";
+import Tabs from "./components/homepage/Tabs";
+import AdvList from "./components/homepage/AdvList";
+import StoryList from "./components/homepage/storySection/StoryList";
+import ArticleList from "./components/homepage/articleSection/ArticleList";
 
 export default function Home() {
 
