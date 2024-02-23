@@ -1,14 +1,13 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+import React, { Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 import Calender from './Calender'
 
-import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
-
-export default function TopBar() {
+export function TopBarComponent() {
   const searchParams = useSearchParams()
   const modalName = searchParams.get("modal")
 
@@ -77,4 +76,10 @@ export default function TopBar() {
       </button>
     </div>
   )
+}
+
+export default function TopBar(){
+  return <Suspense>
+    <TopBarComponent />
+  </Suspense>
 }

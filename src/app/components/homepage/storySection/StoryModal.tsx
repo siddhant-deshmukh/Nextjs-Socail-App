@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 
-export default function StoryModal() {
+export function StoryModal() {
 
   const searchParams = useSearchParams()
 
@@ -95,4 +95,10 @@ export default function StoryModal() {
     return <div hidden={(storyImgSrc && storyHeading && storyUrl && storyIndex) ? false : true}
       className='absolute top-0 left-0 z-50 bg-black bg-opacity-50 w-full min-h-full'></div>
   }
+}
+
+export default function StoryModalComponent(){
+  return <Suspense>
+    <StoryModal />
+  </Suspense>
 }

@@ -1,10 +1,10 @@
 'use client'
 
-import React from 'react'
 import Image from 'next/image';
+import React, { Suspense } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
-export default function Story({ story, index }: {
+export function StoryComponent({ story, index }: {
   index: number
   story: {
     imgSrc: string;
@@ -96,4 +96,18 @@ export default function Story({ story, index }: {
       </div>
     </div>
   )
+}
+
+export default function Story({ story, index }: {
+  index: number
+  story: {
+    imgSrc: string;
+    name: string;
+    topic: string;
+    type: string;
+  }
+}) {
+  return <Suspense>
+    <StoryComponent story={story} index={index} />
+  </Suspense>
 }
