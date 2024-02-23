@@ -45,60 +45,53 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   min-height: 700px;
 }
 
-.nav-link, .nav-link-m {
-  background-color: transparent;
-}
-
-.nav-link .temp-bg, .nav-link-m .temp-bg {
-  width: 0%;
-  height: 100%;
-  background-color: #E8E9FF;
-  transition: width 500ms ;
-}
-.nav-link:hover  .temp-bg, .nav-link-m:hover .temp-bg {
-  width: 100%;
-  background-color: #E8E9FF;
-  transition: width 500ms ;
-}
-
-.nav-link-selected, .nav-link-m-selected{
-  color: white;
-  background-color: #7950F2;
-  transition-property: color, background-color;
-  transition-duration: 500ms;
-}
-
-
-.nav-link-m {
-  background-color: transparent;
-  transition-property: color, background-color;
-  transition-duration: 500ms;
-}
-.nav-link-m:hover {
-  background-color: #E8E9FF;
-  transition-property: color, background-color;
-  transition-duration: 500ms;
-}
-
-
-/* .nav-link-selected .temp-bg {
-  width: 0%;
-  height: 100%;
-  background-color: transparent;
-  transition: width 500ms ;
-}
-.nav-link-selected:hover .temp-bg {
-  width: 100%;
-  background-color: #E8E9FF;
-  transition: width 500ms ;
-} */
-
-/* .nav-link:hover {
-  background-color: #E8E9FF;
-} */
-
 
 @layer utilities {
+
+  /** Main Navbar and Modal Navbar combined properties */
+  #main-nav img, #nav-modal img {
+    @apply w-7 h-7 2xl:w-6 2xl:h-6
+  }
+  #main-nav > a.selected, #nav-modal > a.selected {
+    @apply text-white bg-[#7950F2] transition-colors
+  }
+  #main-nav > a, #nav-modal > a {
+    @apply relative bg-transparent text-[#53545C] dark:text-slate-100 rounded-full 2xl:rounded-xl
+  }
+  #main-nav > a:hover, #nav-modal > a:hover {
+    @apply text-black dark:text-black
+  }
+  #main-nav > a > div, #nav-modal > a > div {
+    @apply absolute size-full flex justify-center items-center
+  }
+  #main-nav > a > div > div, #nav-modal > a > div > div {
+    @apply w-0 h-full bg-[#E8E9FF] transition-[width] duration-500 rounded-full 2xl:rounded-xl overflow-hidden
+  }
+  #main-nav > a:hover > div > div, #nav-modal > a:hover > div > div {
+    @apply w-full
+  }
+  /** Main Nav Properties  */
+  #main-nav > a > span{
+    @apply flex items-center px-2 py-2 relative 2xl:my-0 2xl:px-5 2xl:py-4
+  }
+  #main-nav > a > span > span{
+    @apply text-sm ml-4 font-semibold hidden 2xl:block
+  }
+  #main-nav .alert{
+    @apply absolute top-0 right-0 z-10 w-5 bg-opacity-90 2xl:bg-opacity-100 2xl:static text-[10px] 2xl:text-xs 2xl:ml-4 2xl:w-6 aspect-square bg-[#7950F2] text-white font-bold rounded-full  leading-none flex items-center justify-center
+  }
+  /** Nav Modal Properties  */
+  #nav-modal > a > span{
+    @apply flex items-center px-3 py-2 relative 
+  }
+  #nav-modal > a > span > span{
+    @apply text-sm ml-4 font-semibold block
+  }
+  #nav-modal .alert{
+    @apply static text-[10px] ml-4 w-6 aspect-square bg-[#7950F2] text-white font-bold rounded-full  leading-none flex items-center justify-center
+  }
+
+
   .scroll-left-btn {
     @apply absolute z-10 top-1/2 p-2 text-white dark:text-black bg-purple-700 dark:bg-purple-300 bg-opacity-70 dark:bg-opacity-70 aspect-square rounded-full left-2.5 sm:left-10
   }
@@ -140,46 +133,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     @apply block text-sm leading-4
   }
 
-  .nav-link:hover, .nav-link-m:hover {
-    @apply dark:text-black;
-  }
-  .nav-link-selected:hover, .nav-link-m-selected:hover {
-    @apply text-white dark:text-black;
-    background-color: #E8E9FF;
-    transition-property: color, background-color;
-    transition-duration: 500ms;
-  }
 
-  .nav-link, .nav-link-m {
-    @apply text-[#53545C] dark:text-slate-100
-  }
-  
-  .nav-link, .nav-link-selected, .temp-bg {
-    @apply rounded-full 2xl:rounded-xl
-  }
-  .nav-link-selected .nav-content, .nav-link .nav-content {
-    @apply px-2 py-2 relative 2xl:my-0 2xl:px-5 2xl:py-4
-  }
-  .nav-link .alert {
-    @apply absolute top-0 right-0 z-10 w-5 bg-opacity-90 2xl:bg-opacity-100 2xl:static text-[10px] 2xl:text-xs 2xl:ml-4 2xl:w-6 aspect-square bg-[#7950F2] text-white font-bold rounded-full  leading-none flex items-center justify-center
-  }
-  #navbar img {
-    @apply w-7 h-7 2xl:w-6 2xl:h-6
-  }
-  
-  
-  .nav-link-m, .nav-link-m-selected, .temp-bg {
-    @apply rounded-xl overflow-hidden
-  }
-  .nav-link-m-selected .nav-content, .nav-link-m .nav-content {
-    @apply px-3 py-2.5
-  }
-  .nav-link-m .alert-b {
-    @apply text-xs ml-4 w-6 aspect-square bg-[#7950F2] text-[#E8E9FF] font-extrabold rounded-full  leading-none flex items-center justify-center
-  }
-  
-
-  
   .view-btn {
     /* dark:text-white  dark:bg-[#7950F2] */
     @apply text-[#7750F1]  bg-[#E8E9FF]  hover:bg-[#7950F2] hover:text-white  transition-colors rounded-xl   font-semibold text-xs sm:text-lg 

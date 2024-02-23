@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 import Calender from './Calender'
 import ChangeThemeBtn from './ChangeThemeBtn'
+import NavLinksList from './NavLinksList'
 
 
 export default function NavBarModal() {
@@ -34,9 +35,9 @@ export default function NavBarModal() {
       }}
       ref={modalRef} id="nav-bar-modal" className='w-full h-screen fixed top-0 left-0 bg-black z-[40] bg-opacity-25'>
       <div ref={navbarRef} className='text-[#53545C] dark:text-slate-400 block xl:hidden fixed border-r simple-border top-0 left-0 w-auto px-3 2xl:px-0 2xl:w-[296px] h-screen bg-base-main'>
-        <div className='flex flex-col  w-full items-center py-2 h-full justify-between'>
-          <nav className='w-[233px] text-sm flex flex-col space-y-2'>
-            <Link style={LinkStyles} href={"/"} className='relative nav-link-m'>
+        <div id="nav-modal-container" className='flex flex-col  w-full items-center py-2 h-full justify-between'>
+          <nav id="nav-modal" className='w-[233px] text-sm flex flex-col space-y-2'>
+            {/* <Link style={LinkStyles} href={"/"} className='relative nav-link-m'>
               <div style={LinkContentStyle} className='nav-content z-50'>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17.79 22.75H6.21C3.47 22.75 1.25 20.52 1.25 17.78V10.37C1.25 9.00997 2.09 7.29997 3.17 6.45997L8.56 2.25997C10.18 0.999974 12.77 0.939974 14.45 2.11997L20.63 6.44997C21.82 7.27997 22.75 9.05997 22.75 10.51V17.79C22.75 20.52 20.53 22.75 17.79 22.75ZM9.48 3.43997L4.09 7.63997C3.38 8.19997 2.75 9.46997 2.75 10.37V17.78C2.75 19.69 4.3 21.25 6.21 21.25H17.79C19.7 21.25 21.25 19.7 21.25 17.79V10.51C21.25 9.54997 20.56 8.21997 19.77 7.67997L13.59 3.34997C12.45 2.54997 10.57 2.58997 9.48 3.43997Z" fill="currentColor" />
@@ -132,7 +133,8 @@ export default function NavBarModal() {
                 </svg>
                 <span className='block' style={LinkContentTextStyle}>Settings</span>
               </div>
-            </Link>
+            </Link> */}
+            <NavLinksList />
           </nav>
 
           <div className='special-keys-list-m w-[232px] mt-5'>

@@ -33,7 +33,7 @@ export default function Article({ article }: {
         </div>
         {/* Title */}
         <div className="flex justify-between items-center mt-3">
-          <h1 className='inline-block sm:block text-[#22285E] dark:text-slate-200 text-[18px] sm:text-[24px] font-semibold'>
+          <h1 className='inline-block sm:block text-[#22285E] dark:text-slate-200 text-[18px] sm:text-[24px] font-semibold truncate'>
             {article.title}
           </h1>
           {
